@@ -9,12 +9,14 @@ pipeline
  choice(name: 'Environment',choices: 'Dev\nUAT\nPRD',description: 'Please select Environment')
  string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
  string(name:  'Jobname',description: 'Please Jobname to get ocation of artifact')
+ string(name:  'ContainerId',description: 'Please Enter Container ID:')
 }
   stages{
   stage("build"){
   steps{
     sh "mvn deploy" 
-     sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/AbcabWebApp.war root@${params.servername}:/tmp" 
+     sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/AbcabWebApp.war root@${params.servername}:/tmp"
+     sh "docker cp /tmp/*.war ${parms.ContainerId:/usr/local/tomcat/webapps}"
   }
   }
   }
