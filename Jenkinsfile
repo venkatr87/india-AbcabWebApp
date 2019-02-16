@@ -15,8 +15,7 @@ pipeline
   stage("build"){
   steps{
     sh "mvn clean deploy" 
-     sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/AbcabWebApp.war root@${params.servername}:/tmp"
-     sh "docker cp /tmp/AbcabWebApp.war ${params.ContainerId}:/usr/local/tomcat/webapps"
+     sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/AbcabWebApp.war root@${params.servername}:/usr/local/tomcat/webapps"
   }
   }
   }
