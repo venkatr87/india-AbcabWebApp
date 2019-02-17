@@ -16,7 +16,7 @@
   steps{
     sh "mvn clean deploy" 
      sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/AbcabWebApp.war root@${params.servername}:/tmp"
-     sh "ssh root@172.31.24.224"
+     sh "ssh -tt root@172.31.24.224"
      sh "docker cp /tmp/AbcabWebApp.war ${params.ContainerId}:/usr/local/tomcat/webapps"
   }
   }
