@@ -22,7 +22,7 @@ pipeline
      sh "curl -ls ${params.servername}:8888/AbcabWebApp | head -n 1 | cut -c 10-12 > a"
      script
      {
-     sh(script:"curl -ls ${params.servername}:8888/AbcabWebApp | head -n 1 | cut -c 10-12", returnStdout:true).trim() > $a)
+     sh(script:"curl -ls ${params.servername}:8888/AbcabWebApp | head -n 1 | cut -c 10-12", returnStdout:true).trim() > a)
      }
         echo $a
  
