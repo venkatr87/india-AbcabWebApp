@@ -18,6 +18,7 @@
      sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/AbcabWebApp.war root@${params.servername}:/tmp"
      sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.24.224 'docker cp /tmp/AbcabWebApp.war ${params.ContainerId}:/usr/local/tomcat/webapps'"
     sh "curl -ls ${params.servername}:8888/AbcabWebApp | head -n 1"  
+    sh "echo'Shanmuk made it'
   }
   }
   }
