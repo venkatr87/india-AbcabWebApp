@@ -1,4 +1,6 @@
-  pipeline
+def a
+
+pipeline
 {
    agent{
       label "slave2"
