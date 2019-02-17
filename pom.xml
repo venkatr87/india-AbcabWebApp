@@ -61,6 +61,16 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
+        <plugin>
+		      <groupId>org.apache.tomcat.maven</groupId>
+		      <artifactId>tomcat7-maven-plugin</artifactId>
+		      <version>2.2</version>
+		      <configuration>
+			    <url>http://ec2-54-179-129-91.ap-southeast-1.compute.amazonaws.com:8888/</url>
+			    <server>Tomcat</server>
+			    <path>/AbcabWebApp</path>
+		      </configuration>
+	      </plugin>
       </plugins>
     </pluginManagement>
   </build>
