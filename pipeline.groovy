@@ -1,11 +1,11 @@
-pipelineJob('DSL_Pipeline') {
+pipelineJob('PHP_Pipeline') {
 
-  def repo = 'https://github.com/Veeresh2708/india-AbcabWebApp.git'
+  def repo = 'https://github.com/venkatr87/Webapp1.git'
 
   triggers {
     scm('H/5 * * * *')
   }
-  description("Pipeline for $repo")
+  description("Pipeline for PHP")
 
   definition {
     cpsScm {
